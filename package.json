@@ -1,0 +1,39 @@
+{
+  "name": "car-configuration",
+  "version": "1.0.0",
+  "description": "Car configuration project",
+  "main": "index.js",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "http-status": "^1.5.0",
+    "morgan-body": "^2.6.5",
+    "myzod": "^1.7.4",
+    "natives": "^1.1.6",
+    "nodemon": "^2.0.7",
+    "pg": "^8.6.0",
+    "reflect-metadata": "^0.1.13",
+    "ts-node": "^10.0.0",
+    "tslog": "^3.2.0",
+    "typeorm": "^0.2.34",
+    "typescript": "^4.3.2",
+    "validator": "^13.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^15.12.2"
+  },
+  "scripts": {
+    "build": "tsc",
+    "tsc-skip-lib": "tsc --noEmit --skipLibCheck",
+    "dev": "nodemon --config nodemon.json ./src/index.ts",
+    "prettier-format": "prettier --config .prettierrc '**/**/*.ts' --write",
+    "test": "jest --config jestconfig.json --passWithNoTests",
+    "release": "standard-version",
+    "lint": "tslint ./src",
+    "lint:fix": "tslint --fix ./src",
+    "check": "ncu -e 2",
+    "start": "ts-node ./node_modules/typeorm/cli.js migration:run && npm run dev"
+  },
+  "author": "",
+  "license": "ISC"
+}
